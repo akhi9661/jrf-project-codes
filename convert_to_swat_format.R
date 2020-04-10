@@ -9,7 +9,7 @@ library(pacman)
 pacman::p_load(tidyr,dplyr,data.table,finalfit, install = TRUE)
 
 
-setwd("I:/hurs")
+setwd("I:/folder/name")
 
 ## loading all files and organizing them separately----
 #list all files
