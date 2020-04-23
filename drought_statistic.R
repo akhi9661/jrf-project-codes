@@ -127,7 +127,7 @@ ddext.dur_list[i] = list(dd.dur.ext)
 # export all the data frames in a list as Excel file
 #--------------------------------------------------------
 
-master.list = list(dd_year_list, dd_yr20_list, dd.dur_list, ddsev.dur_list, ddext.dur_list)
+master.list = list(dd_year_list, dd_yr20_list)
 for (i in c(1:length(master.list))){
   write.xlsx(master.list[i], file = "Duration_years.xlsx", sheetName=paste(i), append=T)
   }
