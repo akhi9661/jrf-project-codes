@@ -4,7 +4,7 @@
 # 2. Severe Drought i.e. SPEI b/w -1.5 to -2.0
 # 3. Extreme Drought i.e. SPEI < -2.0
 # 
-# The input file contains 7 variables: 1 varibale is Date and variables
+# The input file contains 7 variables: 1 variable is Date and variables
 # 2:7 is SPEI values at scale 3, 6, 9, 12, 15, and 24
 #---------------------------------------------------------------------------
 
