@@ -14,8 +14,8 @@ library(pacman)
 pacman::p_load(lubridate,dplyr,xlsx, install = TRUE)
 
 # load file
-filepath = "I:/SWAT_RUN_COMPARISON/heatmap-1982-2100.xlsx"
-file.dd = read_xlsx(filepath, sheet = "fr-up") #change the sheet name here
+filepath = "I:/something.xlsx"
+file.dd = read_xlsx(filepath, sheet = "sheet1") #change the sheet name here
 
 
 dd = file.dd[,1:2]
