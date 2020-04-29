@@ -12,7 +12,7 @@
 # libraries
 install.packages("pacman")
 library(pacman)
-pacman::p_load(lubridate,dplyr,xlsx, install = TRUE)
+pacman::p_load(lubridate,dplyr,xlsx,reshape2, install = TRUE)
 
 # load file
 filepath = "I:/something.xlsx"
@@ -30,6 +30,8 @@ drought_data = list(file.dd[,c(1:2)],
 dd.dur_list = list()
 ddsev.dur_list = list()
 ddext.dur_list = list()
+dd_year_list = list()
+dd_yr20_list = list()
 
 for (i in 1:length(drought_data)) {
   dd = drought_data[[i]]
@@ -130,7 +132,7 @@ ddext.dur_list[i] = list(dd.dur.ext)
 
 master.list = list(dd_year_list, dd_yr20_list)
 for (i in c(1:length(master.list))){
-  write.xlsx(master.list[i], file = "Duration_years.xlsx", sheetName=paste(i), append=T)
+  xlsx::write.xlsx(master.list[i], file = "Duration_years.xlsx", sheetName=paste(i), append=T)
   }
 
 #--------------------------------------------------------------------
@@ -141,17 +143,17 @@ for (i in c(1:length(master.list))){
 for (i in c(1:length(dd.dur_list))){
   dd.dur_list$id <- rownames(dd.dur_list) 
   melt(dd.dur_list)
-  write.xlsx(dd.dur_list[i], file = "Drought_duration.xlsx", sheetName=paste(i), append=T)
+  xlsx::write.xlsx(dd.dur_list[i], file = "Drought_duration.xlsx", sheetName=paste(i), append=T)
 }
 
 for (i in c(1:length(ddext.dur_list))){
   ddext.dur_list$id <- rownames(ddext.dur_list) 
   melt(ddext.dur_list)
-  write.xlsx(ddext.dur_list[i], file = "Extreme_drought_duration.xlsx", sheetName=paste(i), append=T)
+  xlsx::write.xlsx(ddext.dur_list[i], file = "Extreme_drought_duration.xlsx", sheetName=paste(i), append=T)
 }
 
 for (i in c(1:length(ddsev.dur_list))){
   ddsev.dur_list$id <- rownames(ddsev.dur_list) 
   melt(ddsev.dur_list)
-  write.xlsx(ddsev.dur_list[i], file = "Severe_drought_duration.xlsx", sheetName=paste(i), append=T)
+  xlsx::write.xlsx(ddsev.dur_list[i], file = "Severe_drought_duration.xlsx", sheetName=paste(i), append=T)
 }
