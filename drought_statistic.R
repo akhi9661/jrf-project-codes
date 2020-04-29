@@ -16,7 +16,7 @@ pacman::p_load(lubridate,dplyr,xlsx, install = TRUE)
 
 # load file
 filepath = "I:/something.xlsx"
-file.dd = read_xlsx(filepath, sheet = "sheet1") #change the sheet name here
+file.dd = read_excel(filepath, sheet = "sheet1") #change the sheet name here
 
 
 dd = file.dd[,1:2]
@@ -147,11 +147,11 @@ for (i in c(1:length(dd.dur_list))){
 for (i in c(1:length(ddext.dur_list))){
   ddext.dur_list$id <- rownames(ddext.dur_list) 
   melt(ddext.dur_list)
-  write.xlsx(ddext.dur_list[i], file = "Severe_drought_duration.xlsx", sheetName=paste(i), append=T)
+  write.xlsx(ddext.dur_list[i], file = "Extreme_drought_duration.xlsx", sheetName=paste(i), append=T)
 }
 
 for (i in c(1:length(ddsev.dur_list))){
   ddsev.dur_list$id <- rownames(ddsev.dur_list) 
   melt(ddsev.dur_list)
-  write.xlsx(ddsev.dur_list[i], file = "Extreme_drought_duration.xlsx", sheetName=paste(i), append=T)
+  write.xlsx(ddsev.dur_list[i], file = "Severe_drought_duration.xlsx", sheetName=paste(i), append=T)
 }
